@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "svelte": "^4.2.2"
+  },
+  "name": "documentation",
+  "version": "0.0.1",
+  "description": "My personal/portfolio website",
+  "main": "index.js",
+  "repository": "git@github.com:tjreigh/documentation.git",
+  "author": "Trevor R <dev@tjreigh.mobi>",
+  "license": "MIT"
+}
