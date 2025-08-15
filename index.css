@@ -43,3 +43,41 @@ p {
   font-size: clamp(1rem, 4vw, 1.25rem);
   color: var(--accent);
 }
+
+main {
+  max-width: 600px;
+  width: 100%;
+}
+
+h1 {
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: clamp(1rem, 4vw, 1.25rem);
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+a {
+  color: var(--fg);
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+
+a:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
