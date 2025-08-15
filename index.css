@@ -1,13 +1,45 @@
+:root {
+  --bg: #0b0d10;
+  --fg: #f2f4f8;
+  --accent: #7bdcff;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f7f8fa;
+    --fg: #101217;
+    --accent: #0077ff;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
 body {
-  font-size: 36pt;
-  font-family: "Times New Roman", times, serif;
+  height: 100%;
+}
+
+body {
+  font: 16px/1.5 system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
 }
 
 h1 {
-  font: 8em "Times New Roman", serif !important;
+  font-size: clamp(2rem, 8vw, 3.5rem);
+  margin-bottom: 1rem;
 }
 
-h3 {
-  font-size: 60pt;
-  font-family: "Times New Roman", times, serif;
+p {
+  font-size: clamp(1rem, 4vw, 1.25rem);
+  color: var(--accent);
 }
