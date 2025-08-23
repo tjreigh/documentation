@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "svelte": "^4.2.2"
+    "svelte": "^5.0.0"
   },
   "name": "documentation",
   "version": "0.0.1",
