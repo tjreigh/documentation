@@ -1,63 +1,167 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- <link rel="stylesheet" href="./styles.css" type="text/stylesheet" /> -->
-
-    <title>Coming Soon</title>
-
-    <style>
-      html,
-      body {
-        height: 100%;
-      }
-      body {
-        margin: 0;
-        font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica,
-          Arial, sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: #111;
-        background: #fff;
-      }
-      main {
-        padding: 2rem;
-        max-width: 640px;
-      }
-      h1 {
-        margin: 0 0 0.5rem;
-        font-size: 2rem;
-      }
-      p {
-        margin: 0.25rem 0 1rem;
-      }
-      .links a {
-        margin: 0 0.5rem;
-        color: inherit;
-        text-decoration: underline;
-      }
-      @media (prefers-color-scheme: dark) {
-        body {
-          background: #0b0d10;
-          color: #f2f4f8;
-        }
-      }
-    </style>
+    <meta
+      name="description"
+      content="Trevor Reigh makes software, games, and assorted things for computers."
+    />
+    <meta name="theme-color" content="#eeeeea" />
+    <title>trevor reigh / projects</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script src="./script.js" defer></script>
   </head>
 
   <body>
-    <main>
-      <h1>Coming Soon</h1>
-      <p>Personal site under construction</p>
-      <div class="links">
-        <a href="https://github.com/tjreigh" target="_blank" rel="noopener"
-          >GitHub</a
-        >
-        <a href="mailto:trevor@tjreigh.mobi">Email Me</a>
-      </div>
+    <a class="skip" href="#content">skip to the stuff</a>
+
+    <header>
+      <a class="name" href="./">trevor reigh<span class="cursor">_</span></a>
+      <nav aria-label="main navigation">
+        <a href="#projects">projects</a>
+        <a href="https://github.com/tjreigh" target="_blank" rel="noopener">github</a>
+        <a href="mailto:trevor@tjreigh.mobi">email</a>
+      </nav>
+    </header>
+
+    <main id="content">
+      <section class="intro" aria-labelledby="intro-title">
+        <div>
+          <p class="prompt">~/tjreigh</p>
+          <h1 id="intro-title">hey, i’m trevor.</h1>
+          <p class="lede">
+            software engineer in dfw specializing in hardware–software
+            integration. history degree, too. i also make games, websites,
+            little tools, and whatever else seems worth figuring out.
+          </p>
+        </div>
+
+        <dl class="now">
+          <div>
+            <dt>recently</dt>
+            <dd><a href="#disco">disco</a></dd>
+          </div>
+          <div>
+            <dt>building</dt>
+            <dd><a href="#bma">bma</a> + <a href="#florble">florble</a></dd>
+          </div>
+          <div>
+            <dt>specialty</dt>
+            <dd>hardware ↔ software</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <div class="section-line">
+          <h2 id="projects-title">/projects</h2>
+          <span>an incomplete list</span>
+        </div>
+
+        <article class="disco" id="disco">
+          <div class="disco-copy">
+            <p class="project-path">01 / recent project</p>
+            <h3>disco</h3>
+            <p>
+              a puzzle game built with typescript, html canvas, and zero
+              dependencies. it started as “what if i made drop7?” and then got
+              somewhat out of hand.
+            </p>
+            <div class="disco-links">
+              <a class="play-disco" href="https://disco.tjreigh.mobi" target="_blank" rel="noopener">
+                play disco ↗
+              </a>
+              <a href="https://github.com/tjreigh/disco" target="_blank" rel="noopener">
+                source
+              </a>
+            </div>
+          </div>
+
+          <div class="disco-preview">
+            <div class="preview-bar">
+              <span>live / disco.tjreigh.mobi</span>
+              <a href="https://disco.tjreigh.mobi" target="_blank" rel="noopener">open ↗</a>
+            </div>
+            <iframe
+              src="https://disco.tjreigh.mobi?demo=1"
+              title="Play Disco"
+              loading="lazy"
+              allow="fullscreen"
+            ></iframe>
+          </div>
+        </article>
+
+        <article class="bma" id="bma">
+          <p class="project-path">02 / live project</p>
+          <div>
+            <h3>bma</h3>
+            <p>it’s (hardly) a messaging app.</p>
+            <div class="bma-links">
+              <a href="https://bma.tjreigh.mobi" target="_blank" rel="noopener">open bma ↗</a>
+              <a href="https://github.com/tjreigh/bad-messaging-app" target="_blank" rel="noopener">source</a>
+            </div>
+          </div>
+          <span class="working">● live</span>
+        </article>
+
+        <article class="bma florble" id="florble">
+          <p class="project-path">03 / current situation</p>
+          <div>
+            <h3>florble <span>(wip)</span></h3>
+            <p>a cursed version of wordle. not really live yet.</p>
+          </div>
+          <span class="working wip">● working on it</span>
+        </article>
+
+        <div class="project-index">
+          <a href="https://github.com/tjreigh/paddlz" target="_blank" rel="noopener">
+            <span class="project-path">04</span>
+            <strong>paddlz</strong>
+            <span>pong for the ti-84 plus ce</span>
+            <span>c</span>
+            <b>↗</b>
+          </a>
+          <a href="https://github.com/tjreigh/Glorp" target="_blank" rel="noopener">
+            <span class="project-path">05</span>
+            <strong>glorp</strong>
+            <span>an absolutely terrible “untyped” language</span>
+            <span>java</span>
+            <b>↗</b>
+          </a>
+          <a href="https://codewith.mobi/src/idappthat.html" target="_blank" rel="noopener">
+            <span class="project-path">06</span>
+            <strong>social coding</strong>
+            <span>web stuff made together at mobi byte</span>
+            <span>assorted</span>
+            <b>↗</b>
+          </a>
+        </div>
+      </section>
+
+      <section class="elsewhere" aria-labelledby="elsewhere-title">
+        <div class="section-line">
+          <h2 id="elsewhere-title">/work + community</h2>
+        </div>
+        <div class="elsewhere-grid">
+          <p>
+            i run
+            <a href="https://treforgesoftware.com" target="_blank" rel="noopener">treforge software ↗</a>,
+            where i do software and web work for people.
+          </p>
+          <p>
+            i’m also a director at
+            <a href="https://codewith.mobi" target="_blank" rel="noopener">mobi byte ↗</a>,
+            a nonprofit trying to make tech less opaque.
+          </p>
+        </div>
+      </section>
     </main>
+
+    <footer>
+      <span>© <span id="year">2026</span> trevor reigh</span>
+      <span>this page is just html, css, and a tiny bit of javascript.</span>
+      <a href="mailto:trevor@tjreigh.mobi">trevor@tjreigh.mobi</a>
+    </footer>
   </body>
 </html>
