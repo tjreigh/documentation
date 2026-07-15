@@ -9,7 +9,30 @@
     />
     <meta name="theme-color" content="#eeeeea" />
     <title>trevor reigh / projects</title>
+    <!-- Apply the saved theme before CSS loads to prevent a flash of the wrong theme. -->
+    <script>
+      let savedTheme;
+
+      try {
+        savedTheme = localStorage.getItem("theme");
+      } catch {}
+
+      const theme =
+        savedTheme === "light" || savedTheme === "dark"
+          ? savedTheme
+          : matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+
+      if (savedTheme === "light" || savedTheme === "dark") {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+
+      document.querySelector('meta[name="theme-color"]').content =
+        theme === "dark" ? "#141413" : "#eeeeea";
+    </script>
     <link rel="stylesheet" href="./index.css" />
+    <!-- Deferred because this script interacts with elements parsed later in the page. -->
     <script src="./script.js" defer></script>
   </head>
 
@@ -22,6 +45,9 @@
         <a href="#projects">projects</a>
         <a href="https://github.com/tjreigh" target="_blank" rel="noopener">github</a>
         <a href="mailto:trevor@tjreigh.mobi">email</a>
+        <button class="theme-toggle" type="button" aria-label="Switch color theme">
+          theme
+        </button>
       </nav>
     </header>
 
