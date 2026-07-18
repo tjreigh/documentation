@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="marginalia — Trevor Reigh's history blog. history, and everything else that isn't code." />
+    <meta name="theme-color" content="#eeeeea" />
+    <title>marginalia / trevor reigh</title>
+    <!-- Apply the saved theme before CSS loads to prevent a flash of the wrong theme. -->
+    <script>
+      let savedTheme;
+
+      try {
+        savedTheme = localStorage.getItem("theme");
+      } catch {}
+
+      const theme =
+        savedTheme === "light" || savedTheme === "dark"
+          ? savedTheme
+          : matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+
+      if (savedTheme === "light" || savedTheme === "dark") {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+
+      document.querySelector('meta[name="theme-color"]').content =
+        theme === "dark" ? "#141413" : "#eeeeea";
+    </script>
+    <link rel="stylesheet" href="../../theme.css" />
+    <link rel="stylesheet" href="./history.css" />
+    <!-- Deferred because this script interacts with elements parsed later in the page. -->
+    <script src="../../script.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip" href="#content">skip to the stuff</a>
+
+    <header>
+      <a class="name" href="../../">trevor reigh<span class="cursor">_</span></a>
+      <nav aria-label="main navigation">
+        <a href="../">blog</a>
+        <a href="../tech/">tech</a>
+        <div class="theme-toggle-group">
+          <span class="theme-toggle-label" aria-hidden="true">theme</span>
+          <button
+            class="theme-toggle"
+            type="button"
+            role="switch"
+            aria-checked="false"
+            aria-label="Switch color theme"
+          >
+            <span class="theme-toggle-thumb"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="content">
+      <section class="marginalia" aria-labelledby="marginalia-title">
+        <div class="section-line">
+          <h2 id="marginalia-title">/blog/history</h2>
+          <span>marginalia</span>
+        </div>
+
+        <p class="empty-state">nothing archived yet.</p>
+        <p class="empty-note">the first entry is still being drafted.</p>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year">2026</span> trevor reigh</span>
+      <span>this page is just html, css, and a tiny bit of javascript.</span>
+      <a href="mailto:trevor@tjreigh.mobi">trevor@tjreigh.mobi</a>
+    </footer>
+  </body>
+</html>

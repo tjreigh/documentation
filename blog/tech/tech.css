@@ -1,0 +1,20 @@
+.stdout {
+  min-height: 24rem;
+  padding: 5rem 0;
+}
+
+.empty-state {
+  margin: 0;
+  color: var(--muted);
+  font: 0.85rem var(--mono);
+}
+
+.empty-note {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font: 0.78rem var(--mono);
+}
+
+.empty-note a {
+  color: var(--blue);
+}

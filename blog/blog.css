@@ -1,0 +1,129 @@
+.blog-hub {
+  padding: 5rem 0;
+}
+
+.hub-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 24rem;
+  border: 1px solid var(--text);
+}
+
+.hub-tech,
+.hub-history {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  text-decoration: none;
+  transition: filter 0.2s ease;
+}
+
+.hub-tech:hover,
+.hub-tech:focus-visible,
+.hub-history:hover,
+.hub-history:focus-visible {
+  filter: brightness(1.12);
+}
+
+.hub-tech {
+  background: var(--panel);
+  color: var(--white);
+  border-right: 1px solid var(--text);
+}
+
+.hub-tech .project-path {
+  margin: 0;
+  color: var(--panel-subtle);
+  font: 0.68rem var(--mono);
+  text-transform: uppercase;
+}
+
+.hub-tech h3 {
+  margin: 0.6rem 0;
+  font: 600 clamp(2rem, 5vw, 3rem)/1 var(--mono);
+  letter-spacing: -0.03em;
+}
+
+.hub-tech p:not(.project-path) {
+  margin: 0;
+  color: var(--panel-muted);
+  font-size: 0.95rem;
+}
+
+.hub-tech b {
+  margin-top: 1rem;
+  color: var(--green);
+  font-weight: 400;
+}
+
+.hub-tech .pill,
+.hub-history .pill {
+  align-self: flex-start;
+  margin-top: 0.6rem;
+}
+
+.hub-tech .pill {
+  border-color: var(--panel-line);
+  color: var(--panel-muted);
+}
+
+.hub-history {
+  position: relative;
+  background: var(--paper);
+  color: var(--text);
+  overflow: hidden;
+}
+
+.hub-history::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: var(--grain);
+  mix-blend-mode: overlay;
+  opacity: 0.15;
+}
+
+.hub-history > * {
+  position: relative;
+}
+
+.hub-history .project-path {
+  margin: 0;
+  color: var(--red);
+  font-family: var(--serif);
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hub-history h3 {
+  margin: 0.6rem 0;
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.02em;
+}
+
+.hub-history p:not(.project-path) {
+  margin: 0;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: 0.95rem;
+}
+
+.hub-history b {
+  margin-top: 1rem;
+  color: var(--red);
+  font-weight: 400;
+}
+
+@media (max-width: 760px) {
+  .hub-split {
+    grid-template-columns: 1fr;
+  }
+
+  .hub-tech {
+    border-right: 0;
+    border-bottom: 1px solid var(--text);
+  }
+}

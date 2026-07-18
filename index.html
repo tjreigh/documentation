@@ -31,6 +31,7 @@
       document.querySelector('meta[name="theme-color"]').content =
         theme === "dark" ? "#141413" : "#eeeeea";
     </script>
+    <link rel="stylesheet" href="./theme.css" />
     <link rel="stylesheet" href="./index.css" />
     <!-- Deferred because this script interacts with elements parsed later in the page. -->
     <script src="./script.js" defer></script>
@@ -43,41 +44,53 @@
       <a class="name" href="./">trevor reigh<span class="cursor">_</span></a>
       <nav aria-label="main navigation">
         <a href="#projects">projects</a>
+        <a href="./blog/">blog</a>
         <a href="https://github.com/tjreigh" target="_blank" rel="noopener">github</a>
         <a href="mailto:trevor@tjreigh.mobi">email</a>
-        <button class="theme-toggle" type="button" aria-label="Switch color theme">
-          theme
-        </button>
+        <div class="theme-toggle-group">
+          <span class="theme-toggle-label" aria-hidden="true">theme</span>
+          <button
+            class="theme-toggle"
+            type="button"
+            role="switch"
+            aria-checked="false"
+            aria-label="Switch color theme"
+          >
+            <span class="theme-toggle-thumb"></span>
+          </button>
+        </div>
       </nav>
     </header>
 
     <main id="content">
-      <section class="intro" aria-labelledby="intro-title">
-        <div>
-          <p class="prompt">~/tjreigh</p>
-          <h1 id="intro-title">hey, i’m trevor.</h1>
-          <p class="lede">
-            software engineer in dfw specializing in hardware–software
-            integration. history degree, too. i also make games, websites,
-            little tools, and whatever else seems worth figuring out.
-          </p>
-        </div>
+      <div class="intro-frame">
+        <section class="intro" aria-labelledby="intro-title">
+          <div>
+            <p class="prompt">~/tjreigh</p>
+            <h1 id="intro-title"><span class="dropcap">h</span>ey, i’m trevor.</h1>
+            <p class="lede">
+              software engineer in dfw specializing in hardware–software
+              integration. history degree, too. i also make games, websites,
+              little tools, and whatever else seems worth figuring out.
+            </p>
+          </div>
 
-        <dl class="now">
-          <div>
-            <dt>recently</dt>
-            <dd><a href="#disco">disco</a></dd>
-          </div>
-          <div>
-            <dt>building</dt>
-            <dd><a href="#bma">bma</a> + <a href="#florble">florble</a></dd>
-          </div>
-          <div>
-            <dt>specialty</dt>
-            <dd>hardware ↔ software</dd>
-          </div>
-        </dl>
-      </section>
+          <dl class="now">
+            <div>
+              <dt>recently</dt>
+              <dd><a href="#disco">disco</a></dd>
+            </div>
+            <div>
+              <dt>building</dt>
+              <dd><a href="#bma">bma</a> + <a href="#rune">rune</a> + <a href="#florble">florble</a></dd>
+            </div>
+            <div>
+              <dt>specialty</dt>
+              <dd>hardware ↔ software</dd>
+            </div>
+          </dl>
+        </section>
+      </div>
 
       <section class="projects" id="projects" aria-labelledby="projects-title">
         <div class="section-line">
@@ -87,13 +100,17 @@
 
         <article class="disco" id="disco">
           <div class="disco-copy">
-            <p class="project-path">01 / recent project</p>
+            <p class="project-path">01 <span class="rubric">§</span> recent project</p>
             <h3>disco</h3>
             <p>
               a puzzle game built with typescript, html canvas, and zero
               dependencies. it started as “what if i made drop7?” and then got
               somewhat out of hand.
             </p>
+            <div class="tags">
+              <span class="pill">typescript</span>
+              <span class="pill">canvas</span>
+            </div>
             <div class="disco-links">
               <a class="play-disco" href="https://disco.tjreigh.mobi" target="_blank" rel="noopener">
                 play disco ↗
@@ -101,6 +118,7 @@
               <a href="https://github.com/tjreigh/disco" target="_blank" rel="noopener">
                 source
               </a>
+              <span class="status">live</span>
             </div>
           </div>
 
@@ -119,50 +137,96 @@
         </article>
 
         <article class="bma" id="bma">
-          <p class="project-path">02 / live project</p>
+          <p class="project-path">02 <span class="rubric">§</span> live project</p>
           <div>
             <h3>bma</h3>
             <p>it’s (hardly) a messaging app.</p>
+            <div class="tags">
+              <span class="pill">html/css/js</span>
+              <span class="pill">typescript</span>
+              <span class="pill">sqlite</span>
+            </div>
             <div class="bma-links">
               <a href="https://bma.tjreigh.mobi" target="_blank" rel="noopener">open bma ↗</a>
               <a href="https://github.com/tjreigh/bad-messaging-app" target="_blank" rel="noopener">source</a>
             </div>
           </div>
-          <span class="working">● live</span>
+          <span class="status">live</span>
+        </article>
+
+        <article class="bma" id="rune">
+          <p class="project-path">03 <span class="rubric">§</span> still cooking</p>
+          <div>
+            <h3>rune <span>(wip)</span></h3>
+            <p>
+              runtime unicode numeric evaluation — an esoteric language, working
+              toward turing-complete.
+            </p>
+            <div class="tags">
+              <span class="pill">python</span>
+              <span class="pill">fastapi</span>
+              <span class="pill">html/css/js</span>
+            </div>
+            <div class="bma-links">
+              <a href="https://rune.tjreigh.mobi" target="_blank" rel="noopener">open rune ↗</a>
+              <a href="https://github.com/tjreigh/RUNE" target="_blank" rel="noopener">source</a>
+            </div>
+          </div>
+          <span class="status wip">in progress</span>
         </article>
 
         <article class="bma florble" id="florble">
-          <p class="project-path">03 / current situation</p>
+          <p class="project-path">04 <span class="rubric">§</span> half-baked</p>
           <div>
             <h3>florble <span>(wip)</span></h3>
             <p>a cursed version of wordle. not really live yet.</p>
+            <div class="tags">
+              <span class="pill">html/css/js</span>
+            </div>
           </div>
-          <span class="working wip">● working on it</span>
+          <span class="status wip">in progress</span>
         </article>
 
         <div class="project-index">
           <a href="https://github.com/tjreigh/paddlz" target="_blank" rel="noopener">
-            <span class="project-path">04</span>
+            <span class="project-path">05<span class="rubric">¶</span></span>
             <strong>paddlz</strong>
             <span>pong for the ti-84 plus ce</span>
-            <span>c</span>
-            <b>↗</b>
-          </a>
-          <a href="https://github.com/tjreigh/Glorp" target="_blank" rel="noopener">
-            <span class="project-path">05</span>
-            <strong>glorp</strong>
-            <span>an absolutely terrible “untyped” language</span>
-            <span>java</span>
+            <span class="pill">c</span>
             <b>↗</b>
           </a>
           <a href="https://codewith.mobi/src/idappthat.html" target="_blank" rel="noopener">
-            <span class="project-path">06</span>
+            <span class="project-path">06<span class="rubric">¶</span></span>
             <strong>social coding</strong>
             <span>web stuff made together at mobi byte</span>
-            <span>assorted</span>
+            <span class="pill">assorted</span>
             <b>↗</b>
           </a>
         </div>
+      </section>
+
+      <section class="writing" id="writing" aria-labelledby="writing-title">
+        <div class="section-line">
+          <h2 id="writing-title">/writing</h2>
+          <span>two blogs, one seam</span>
+        </div>
+
+        <a class="tear-card" href="./blog/">
+          <div class="tear-under" aria-hidden="true">
+            <span class="rubric">¶</span>
+          </div>
+          <div class="tear-face">
+            <p class="project-path">07 <span class="rubric">§</span> tech + history</p>
+            <h3>the log</h3>
+            <p>
+              notes on software, and notes on everything that isn’t. kept in
+              separate rooms on purpose. read the blog ↗
+            </p>
+            <div class="tags">
+              <span class="pill">no posts yet</span>
+            </div>
+          </div>
+        </a>
       </section>
 
       <section class="elsewhere" aria-labelledby="elsewhere-title">

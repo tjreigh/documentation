@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="stdout — Trevor Reigh's tech blog. software, hardware, and whatever broke this week." />
+    <meta name="theme-color" content="#eeeeea" />
+    <title>stdout / trevor reigh</title>
+    <!-- Apply the saved theme before CSS loads to prevent a flash of the wrong theme. -->
+    <script>
+      let savedTheme;
+
+      try {
+        savedTheme = localStorage.getItem("theme");
+      } catch {}
+
+      const theme =
+        savedTheme === "light" || savedTheme === "dark"
+          ? savedTheme
+          : matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+
+      if (savedTheme === "light" || savedTheme === "dark") {
+        document.documentElement.dataset.theme = savedTheme;
+      }
+
+      document.querySelector('meta[name="theme-color"]').content =
+        theme === "dark" ? "#141413" : "#eeeeea";
+    </script>
+    <link rel="stylesheet" href="../../theme.css" />
+    <link rel="stylesheet" href="./tech.css" />
+    <!-- Deferred because this script interacts with elements parsed later in the page. -->
+    <script src="../../script.js" defer></script>
+  </head>
+
+  <body>
+    <a class="skip" href="#content">skip to the stuff</a>
+
+    <header>
+      <a class="name" href="../../">trevor reigh<span class="cursor">_</span></a>
+      <nav aria-label="main navigation">
+        <a href="../">blog</a>
+        <a href="../history/">history</a>
+        <div class="theme-toggle-group">
+          <span class="theme-toggle-label" aria-hidden="true">theme</span>
+          <button
+            class="theme-toggle"
+            type="button"
+            role="switch"
+            aria-checked="false"
+            aria-label="Switch color theme"
+          >
+            <span class="theme-toggle-thumb"></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main id="content">
+      <section class="stdout" aria-labelledby="stdout-title">
+        <div class="section-line">
+          <h2 id="stdout-title">/blog/tech</h2>
+          <span>stdout</span>
+        </div>
+
+        <p class="empty-state">nothing published yet<span class="cursor">_</span></p>
+        <p class="empty-note">
+          first post is queued. until then, there’s
+          <a href="https://github.com/tjreigh" target="_blank" rel="noopener">the github</a>.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year">2026</span> trevor reigh</span>
+      <span>this page is just html, css, and a tiny bit of javascript.</span>
+      <a href="mailto:trevor@tjreigh.mobi">trevor@tjreigh.mobi</a>
+    </footer>
+  </body>
+</html>

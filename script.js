@@ -12,7 +12,7 @@ function currentTheme() {
 function updateThemeToggle() {
   const theme = currentTheme();
   const nextTheme = theme === "dark" ? "light" : "dark";
-  themeToggle.textContent = nextTheme;
+  themeToggle.setAttribute("aria-checked", theme === "dark" ? "true" : "false");
   themeToggle.setAttribute("aria-label", `Switch to ${nextTheme} theme`);
   themeColor.content = theme === "dark" ? "#141413" : "#eeeeea";
 }
